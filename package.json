@@ -1,5 +1,5 @@
 {
-  "name": "examlynx",
+  "name": "music-box",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -10,13 +10,23 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/register": "^7.18.9",
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "morgan": "^1.10.0",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sequelize": "^6.25.5",
-    "sequelize-cli": "^6.5.2"
+    "sequelize-cli": "^6.5.2",
+    "session-file-store": "^1.5.0"
   },
   "devDependencies": {
     "eslint": "^8.27.0",
@@ -26,5 +36,14 @@
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
     "nodemon": "^2.0.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xanaduxan/Music-box.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Xanaduxan/Music-box/issues"
+  },
+  "homepage": "https://github.com/Xanaduxan/Music-box#readme",
+  "description": ""
 }
