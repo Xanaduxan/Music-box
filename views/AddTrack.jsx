@@ -2,10 +2,10 @@ const React = require('react');
 
 const Layout = require('./Layout');
 
-function AddTrack({ user, id}) {
+function AddTrack({ user, id }) {
   return (
     <Layout user={user}>
-
+      <h2>Добавьте трек</h2>
       <form className="AddForm" method="post" data-id={user.id} action="/tracks/add">
 
         <div className="mb-3">
@@ -23,7 +23,7 @@ function AddTrack({ user, id}) {
         <div className="addRes" />
 
       </form>
-      <script defer src="/js/cardlistclient.js" />
+      <script defer src="/js/tracklistclient.js" />
     </Layout>
   );
 }

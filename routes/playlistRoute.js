@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const { Playlist, Track } = require('../db/models');
-const PlaylistPage = require('../views/PlaylistPage');
+const { Playlist } = require('../db/models');
 const AddPlaylist = require('../views/AddPlaylist');
 
 router.get('/add', async (req, res) => {
@@ -31,28 +30,6 @@ router.post('/add', async (req, res) => {
     }
   } catch (error) {
     res.json(error.message);
-  }
-});
-
-router.get('/:userId', async (req, res) => {
-  try {
-    const { user } = res.locals;
-
-    const { userId } = req.params;
-
-    const playlist = await Playlist.findOne({
-      where: {
-        userId,
-      },
-    });
-
-    const tracks = await Track.findAll({});
-
-    res.renderComponent(PlaylistPage, {
-      tracks, user, playlist,
-    });
-  } catch (error) {
-    console.log(error);
   }
 });
 

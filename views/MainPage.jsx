@@ -21,14 +21,14 @@ function MainPage({ tracks, playlists, user }) {
         </ul>
       
         <p>Playlists:</p>
-        <ul className="trackList">
+        <ul className="playList">
           {playlists.map((playlist) => (
             <li key={playlist.id}>
               <a href={`/playlists/${playlist.id}`}>
-                Tracks
+                Playlist
                 {' '}
                 { }
-                {playlists.title}
+                {playlist.title}
               </a>
             </li>
           ))}
