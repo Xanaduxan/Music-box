@@ -2,7 +2,7 @@ const React = require('react');
 
 const Layout = require('./Layout');
 
-function AddTrack({ user}) {
+function AddTrack({ user, id}) {
   return (
     <Layout user={user}>
 

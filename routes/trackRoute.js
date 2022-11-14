@@ -27,7 +27,7 @@ router.post('/add', async (req, res) => {
         userId: id,
       });
 
-      res.json({ result: true, message: 'Трек добавлен', track });
+      res.json({ result: true, message: 'Трек добавлен'});
     }
   } catch (error) {
     res.json(error.message);

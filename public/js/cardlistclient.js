@@ -1,11 +1,10 @@
 const cardAdd = document.querySelector('.AddForm');
-const resultAdd = document.querySelector('.resultAdd');
+const addRes = document.querySelector('.addRes');
 
 cardAdd.addEventListener('submit', async (event) => {
   event.preventDefault();
   try {
     const { id } = event.target.dataset;
-
     const title = event.target.title.value;
     const image = event.target.image.value;
     const response = await fetch('/tracks/add', {
@@ -14,13 +13,14 @@ cardAdd.addEventListener('submit', async (event) => {
       body: JSON.stringify({
         title,
         image,
+        userId: id,
       }),
     });
     const data = await response.json();
     if (!data.result) {
-      resultAdd.innerHTML = data.message;
+      addRes.innerHTML = data.message;
     } else {
-      resultAdd.insertAdjacentHTML('beforeend', data.message);
+      addRes.innerHTML = data.message;
     }
     cardAdd.reset();
   } catch (error) {

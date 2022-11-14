@@ -39,7 +39,7 @@ function Header({ user }) {
           </ul>
         </div>
       )}
-      <link rel="stylesheet" href="/css/headerStyle.css" />
+      <link rel="stylesheet" href="/css/main.css" />
     </>
   );
 }

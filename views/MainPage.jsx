@@ -19,8 +19,7 @@ function MainPage({ tracks, playlists, user }) {
             </li>
           ))}
         </ul>
-      </div>
-      <div className="container">
+      
         <p>Playlists:</p>
         <ul className="trackList">
           {playlists.map((playlist) => (

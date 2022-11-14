@@ -1,0 +1,54 @@
+body{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(211, 245, 222);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.allArticles {
+  display: flex;
+}
+
+.card-text {
+  width: 288px;
+  gap: 20px;
+}
+
+.card-one {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 500px;
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+}
+
+.filter-container{
+  padding:30px;
+}
+
+a{
+  color:blue,
+}
+
+.container{
+  display: flex;
+  gap: 20px;
+}
