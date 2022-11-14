@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const Registration = require('../views/Registration');
-const { User } = require('../db/models');
+const { User, Card } = require('../db/models');
 
 router.get('/', (req, res) => {
   res.renderComponent(Registration);
@@ -14,18 +14,18 @@ router.post('/', async (req, res) => {
 
   const userEmail = await User.findOne({
     where: {
-      email,
+      name,
     },
     raw: true,
   });
   if (userEmail) {
-    return res.json({ registration: false, message: 'Невозможно зарегистрировать по этому email' });
+    return res.json({ registration: false, message: 'This email is already in use' });
   }
   if (password !== passwordconf) {
-    return res.json({ registration: false, message: 'Пароли не совпадают' });
+    return res.json({ registration: false, message: 'Passwords are not the same' });
   }
   if (password.length < 8) {
-    return res.json({ registration: false, message: 'Пароль должен быть не менее 8 символов ' });
+    return res.json({ registration: false, message: 'Password should contain more than 7 symbols' });
   }
   try {
     const saltRounds = 10;

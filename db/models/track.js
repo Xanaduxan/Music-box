@@ -9,19 +9,29 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({ User, PlaylistTrack }) {
+    static associate({ User, Playlist }) {
       Track.belongsTo(User, {
-        foreignKey: 'userId',
+        foreignKey: 'userId', onDelete: 'CASCADE',
       });
-      Track.hasMany(PlaylistTrack, {
-        foreignKey: 'trackId',
-      });
+
     }
   }
   Track.init({
-    title: DataTypes.TEXT,
-    image: DataTypes.TEXT,
-    userId: DataTypes.INTEGER,
+    title: {
+      allowNull: false,
+      type: DataTypes.TEXT,
+    },
+    image: {
+      type: DataTypes.TEXT,
+    },
+    userId: {
+      allowNull: false,
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Users',
+        key: 'id',
+      },
+    },
   }, {
     sequelize,
     modelName: 'Track',

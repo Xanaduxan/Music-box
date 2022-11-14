@@ -12,7 +12,10 @@ function Header({ user }) {
             </li>
 
             <li className="navbar-item">
-              <a className="nav-link" href="/profile">Профиль</a>
+              <a className="nav-link" href="/tracks/add">Добавить трек</a>
+            </li>
+            <li className="navbar-item">
+              <a className="nav-link" href="/playlists/add">Добавить плейлист</a>
             </li>
             <li className="navbar-item">
               <a className="nav-link" href="/logout">Выйти</a>
