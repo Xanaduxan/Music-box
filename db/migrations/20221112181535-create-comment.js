@@ -14,6 +14,7 @@ module.exports = {
           model: 'Users',
           key: 'id',
         },
+        onDelete: 'cascade',
       },
       playlistId: {
         type: Sequelize.INTEGER,
@@ -21,10 +22,12 @@ module.exports = {
           model: 'Playlists',
           key: 'id',
         },
+        onDelete: 'cascade',
       },
       comment: {
         allowNull: false,
         type: Sequelize.TEXT,
+        onDelete: 'cascade',
       },
       createdAt: {
         allowNull: false,

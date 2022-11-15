@@ -2,7 +2,7 @@ const React = require('react');
 const Layout = require('./Layout');
 
 function PlaylistTracks({
-  tracks, user, playlist, playlisttracks,
+  tracks, user, playlist, playlisttracks, comments,
 }) {
   return (
     <Layout user={user}>
@@ -34,7 +34,28 @@ function PlaylistTracks({
           ))}
 
         </div>
+        <a href={`/playlists/${playlist.id}/comments`}>Прокомментировать плейлист</a>
+        <div>
+          {comments.map((comment) => (
+            <div key={comment.id} className="commentCard" data-userid={user.id}>
 
+              <div>
+                Комментарий:
+                {' '}
+                {comment.comment}
+              </div>
+
+              <div className="buttons">
+                {user.id === comment.userId && (
+                <div>
+                  <button type="button" className="changeComment" data-trackid={user.id} data-playlistid={playlist.id} name={`edit${comment.id}`}>Редактировать</button>
+                  <button type="button" className="delComment" data-trackid={user.id} data-playlistid={playlist.id} name={`del${comment.id}`}>Удалить</button>
+                </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
         <div>
           <a href={`/playlists/${playlist.id}/edit`}>Редактировать плейлист</a>
           {playlisttracks.map((track) => (
@@ -51,7 +72,6 @@ function PlaylistTracks({
                 <img src={track['Tracks.image']} alt={`${track['Tracks.title']}`} />
               </div>
 
-             
             </div>
           ))}
 
