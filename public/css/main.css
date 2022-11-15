@@ -52,3 +52,10 @@ a{
   display: flex;
   gap: 20px;
 }
+img{
+  width:100px;
+}
+.list-group{
+  display: flex;
+  flex-direction: row;
+}

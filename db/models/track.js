@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       Track.belongsTo(User, {
         foreignKey: 'userId', onDelete: 'CASCADE',
       });
-      Track.belongsToMany(Playlist, { through: PlaylistTrack, foreignKey: 'playlistId', otherKey: 'trackId' });
+      Track.belongsToMany(Playlist, { through: PlaylistTrack, foreignKey: 'trackId', otherKey: 'playlistId' });
     }
   }
   Track.init({
@@ -21,9 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.TEXT,
     },
-    image: {
-      type: DataTypes.TEXT,
-    },
+    image: DataTypes.TEXT,
     userId: {
       allowNull: false,
       type: DataTypes.INTEGER,

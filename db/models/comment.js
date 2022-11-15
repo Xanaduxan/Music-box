@@ -19,9 +19,24 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Comment.init({
-    userId: DataTypes.INTEGER,
-    playlistId: DataTypes.INTEGER,
-    comment: DataTypes.TEXT,
+    userId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Users',
+        key: 'id',
+      },
+    },
+    playlistId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Playlists',
+        key: 'id',
+      },
+    },
+    comment: {
+      allowNull: false,
+      type: DataTypes.TEXT,
+    },
   }, {
     sequelize,
     modelName: 'Comment',

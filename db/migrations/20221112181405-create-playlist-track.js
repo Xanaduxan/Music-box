@@ -14,6 +14,7 @@ module.exports = {
           model: 'Playlists',
           key: 'id',
         },
+        onDelete: 'cascade',
       },
       trackId: {
         type: Sequelize.INTEGER,
@@ -21,6 +22,7 @@ module.exports = {
           model: 'Tracks',
           key: 'id',
         },
+        onDelete: 'cascade',
       },
       createdAt: {
         allowNull: false,
